@@ -12,7 +12,7 @@ class Munition(models.Model):
     amount = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.amount
+        return str(self.amount)
 
 class Kanon(models.Model):
     kanon_name = models.CharField(max_length=200)
