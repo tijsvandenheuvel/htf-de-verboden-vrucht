@@ -7,8 +7,7 @@
 {% endfor %}
 </ul>
 
-<!-- <form action="{% url 'kanon:reservation' kanon.id %}" method='post'> -->
-<form>
+<form action="{% url 'kanon:reservation' kanon.id %}" method='post'>
     {% csrf_token %}
     <button type='submit'>reserveer soldaten</button>
 </form>
@@ -17,8 +16,7 @@
 <h3>munition</h3>
 {{kanon.munition}}
 
-<!-- <form action="{% url 'kanon:order' kanon.id %}" method='post'> -->
-<form>
+<form action="{% url 'kanon:order' kanon.id %}" method='post'>
     {% csrf_token %}
     <button type='submit'>bestel munitie</button>
 </form>
