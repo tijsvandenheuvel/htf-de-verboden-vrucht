@@ -1,5 +1,7 @@
 from django.db import models
 
+#test
+
 class User(models.Model):
     user_name = models.CharField(max_length=200)
 
