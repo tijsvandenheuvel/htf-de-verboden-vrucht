@@ -24,7 +24,7 @@ def order(request, kanon_id):
 
 def placeOrder(request,kanon_id,amount):
     kanon = get_object_or_404(Kanon, pk=kanon_id)
-    kanon.munition=kanon.munition.amount+amount
+    kanon.munition=kanon.munition+request.POST['amount']
     return render(request, 'kanon/detail.html', {'kanon': kanon})
 
 def assignSoldier(request,kanon_id,name):
