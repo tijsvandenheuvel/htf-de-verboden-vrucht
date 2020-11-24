@@ -3,6 +3,7 @@ from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse
 
 from .models import Kanon
+from .models import User
 
 
 def index(request):
@@ -32,7 +33,13 @@ def placeOrder(request,kanon_id):
 
 def assignSoldier(request,kanon_id):
     kanon = get_object_or_404(Kanon, pk=kanon_id)
-    kanon.user_set.add()
+    name = request.POST['name']
+    user = User.objects.filter(user_name=name)
+    if user:
+        kanon.user_set.add(user[0])
+    else:
+        kanon.user_set.create(user_name=name)
+    kanon.save()
     return render(request, 'kanon/detail.html', {'kanon': kanon})
 
 

@@ -10,6 +10,7 @@ class Kanon(models.Model):
 class User(models.Model):
     user_name = models.CharField(max_length=200)
     kanon = models.ForeignKey(Kanon, on_delete=models.CASCADE, null=True)
+
     def __str__(self):
         return self.user_name
 
