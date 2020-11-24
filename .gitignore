@@ -1,3 +1,5 @@
+.pyc
+
 app/app/__pycache__/
 
 app/kanon/migrations/
