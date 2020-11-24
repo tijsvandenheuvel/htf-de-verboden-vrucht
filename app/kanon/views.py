@@ -46,4 +46,6 @@ def createUser(request):
 
 
 def createKanon(request):
-    return render(request, 'kanon/kannon.html')
+    kanon_name = request.POST['name']
+    kanon_name.save()
+    return render(request, 'api/kanon')

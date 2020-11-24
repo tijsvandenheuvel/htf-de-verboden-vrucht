@@ -5,9 +5,10 @@
 <h2>Create Kanon</h2>
 
 
-<form action="{% url 'api:placeOrder' kanon.id%}" method='post'>
+<form action="{% url 'kanon:createKanon'%}" method='post'>
+    {% csrf_token %}
     <label for="Kname">Kanon name:</label><br>
-    <input type="text" id="Kname" name="Kname" value="{{ kanon_name }}"><br>
+    <input type="text" id="Kname" name="Kname"><br>
     <input type="submit" value="Create">
 </form>
 
