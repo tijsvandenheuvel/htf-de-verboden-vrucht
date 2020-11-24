@@ -5,6 +5,9 @@ python3 manage.py runserver
 python3 manage.py makemigrations
 python3 manage.py migrate
 
+-reverse all migrations-
+python3 manage.py migrate kanon zero
+
 -run om admin aan te maken-
 python3 manage.py createsuperuser
 
@@ -13,3 +16,4 @@ localhost:8000/admin
 
 -index page-
 localhost:8000/kanon
+
