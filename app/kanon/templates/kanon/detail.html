@@ -1,0 +1,14 @@
+<h1>{{ kanon.kanon_name }}</h1>
+
+<h3>users</h3>
+<ul>
+{% for user in kanon.user_set.all %}
+    <li>{{ user.user_name}}</li>
+{% endfor %}
+</ul>
+<h3>munitions</h3>
+<ul>
+{% for munition in kanon.munition_set.all %}
+    <li>{{ munition.amount}}</li>
+{% endfor %}
+</ul>
