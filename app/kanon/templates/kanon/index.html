@@ -1,0 +1,9 @@
+{% if kanon_list %}
+    <ul>
+    {% for kanon in kanon_list %}
+        <li><a href="{% url 'kanon:detail' kanon.id %}">{{ kanon.kanon_name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No kanons are available.</p>
+{% endif %}
