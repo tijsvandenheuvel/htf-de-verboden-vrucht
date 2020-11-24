@@ -11,7 +11,10 @@
     <input type="text" id="name" name="name"><br>
     <input type="submit" value="Assign">
 </form>
-
-
+</br>
+<form action="{% url 'api:index' %}" method="POST">
+    {% csrf_token %}
+    <button type="submit">back to index</button>
+ </form>
 </body>
 </html>

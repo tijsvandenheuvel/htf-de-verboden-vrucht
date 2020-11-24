@@ -20,4 +20,10 @@
     {% csrf_token %}
     <button type='submit'>bestel munitie</button>
 </form>
+
+</br>
+<form action="{% url 'api:index' %}" method="POST">
+    {% csrf_token %}
+    <button type="submit">back to index</button>
+ </form>
     
