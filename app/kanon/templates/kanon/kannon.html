@@ -5,9 +5,9 @@
 <h2>Create Kanon</h2>
 
 
-<form>
+<form action="{% url 'kanon:placeOrder' kanon.id%}" method='post'>
     <label for="Kname">Kanon name:</label><br>
-    <input type="text" id="Kname" name="Kname"><br>
+    <input type="text" id="Kname" name="Kname" value="{{ kanon_name }}"><br>
     <input type="submit" value="Create">
 </form>
 

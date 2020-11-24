@@ -45,3 +45,7 @@ def assignSoldier(request,kanon_id):
 
 def createUser(request):
     return render(request, 'kanon/index.html')
+
+
+def createKanon(request):
+    return render(request, 'kanon/kannon.html')
