@@ -1,4 +1,4 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
 
 from django.http import HttpResponse
 
@@ -42,10 +42,21 @@ def assignSoldier(request,kanon_id):
     return render(request, 'kanon/detail.html', {'kanon': kanon})
 
 def createUser(request):
-    return render(request, 'kanon/index.html')
+    user_name = request.POST['name']
+    user = User(user_name = user_name)
+    user.save()
+    return redirect('/api/kanon/')
+
+def goToCreateUser(request):
+    return render(request, 'user/user.html')
 
 
 def createKanon(request):
     kanon_name = request.POST['name']
-    kanon_name.save()
-    return render(request, 'api/kanon')
+    kanon = Kanon(kanon_name = kanon_name)
+    kanon.save()
+    return redirect('/api/kanon/')
+
+def goToCreateKanon(request):
+    return render(request, 'kanon/kanon.html')
+

@@ -7,3 +7,13 @@
 {% else %}
     <p>No kanons are available.</p>
 {% endif %}
+
+<form action="{% url 'api:goToCreateKanon' %}" method="POST">
+    {% csrf_token %}
+    <button type="submit">Create Kanon</button>
+ </form>
+
+ <form action="{% url 'api:goToCreateUser' %}" method="POST">
+    {% csrf_token %}
+    <button type="submit">Create User</button>
+ </form>

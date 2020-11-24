@@ -2,12 +2,12 @@
 <html>
 <body>
 
-<h2>Create User</h2>
+<h2>Create Kanon</h2>
 
 
-<form action="{% url 'api:createUser'%}" method='POST'>
+<form action="{% url 'api:createKanon'%}" method='POST'>
     {% csrf_token %}
-    <label for="name">User name:</label><br>
+    <label for="name">Kanon name:</label><br>
     <input type="text" id="name" name="name"><br>
     <input type="submit" value="Create">
 </form>

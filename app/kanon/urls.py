@@ -11,6 +11,8 @@ urlpatterns = [
     path('kanon/<int:kanon_id>/order', views.order, name='order'),
     path('kanon/<int:kanon_id>/assignSoldier', views.assignSoldier, name='assignSoldier'),
     path('kanon/<int:kanon_id>/placeOrder', views.placeOrder, name='placeOrder'),
-    path('user', views.createUser, name='munition'),
-    path('kanon/', views.createKanon, name='createKanon')
+    path('user/createUser', views.createUser, name='createUser'),
+    path('user/goToCreateUser', views.goToCreateUser, name= 'goToCreateUser'),
+    path('kanon/createKanon', views.createKanon, name='createKanon'),
+    path('kanon/goToCreateKanon', views.goToCreateKanon, name='goToCreateKanon')
 ]
