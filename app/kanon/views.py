@@ -5,7 +5,6 @@ from django.http import HttpResponse
 from .models import Kanon
 from .models import User
 
-
 def index(request):
     kanon_list = Kanon.objects.order_by('kanon_name')[:5]
     context = {'kanon_list': kanon_list}
@@ -41,7 +40,6 @@ def assignSoldier(request,kanon_id):
         kanon.user_set.create(user_name=name)
     kanon.save()
     return render(request, 'kanon/detail.html', {'kanon': kanon})
-
 
 def createUser(request):
     return render(request, 'kanon/index.html')
