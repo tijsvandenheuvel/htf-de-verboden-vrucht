@@ -14,8 +14,16 @@ def detail(request, kanon_id):
     kanon = get_object_or_404(Kanon, pk=kanon_id)
     return render(request, 'kanon/detail.html', {'kanon': kanon})
 
-def reservation(request):
+# add users to kanon
+def reservation(request, kanon_id):
     return render(request, 'kanon/index.html')
 
-def order(request):
+# add munition to kanon
+def order(request, kanon_id):
+    return render(request, 'kanon/index.html')
+
+def createMunition(request):
+    return render(request, 'kanon/index.html')
+
+def createUser(request):
     return render(request, 'kanon/index.html')
