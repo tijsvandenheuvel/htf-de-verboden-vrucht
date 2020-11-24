@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from kanon import views
 
 urlpatterns = [
+    path('', views.index, name='index'),
     path('api/', include('kanon.urls')),
     path('admin/', admin.site.urls),
 ]
