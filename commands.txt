@@ -7,3 +7,9 @@ python3 manage.py migrate
 
 -run om admin aan te maken-
 python3 manage.py createsuperuser
+
+-admin page-
+localhost:8000/admin
+
+-index page-
+localhost:8000/kanon
