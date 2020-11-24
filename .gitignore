@@ -1,2 +1,6 @@
-/migrations
-/__pycache__
+.pyc
+
+app/app/__pycache__/
+
+app/kanon/migrations/
+app/kanon/__pycache__/

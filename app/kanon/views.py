@@ -14,3 +14,8 @@ def detail(request, kanon_id):
     kanon = get_object_or_404(Kanon, pk=kanon_id)
     return render(request, 'kanon/detail.html', {'kanon': kanon})
 
+def reservation(request):
+    return render(request, 'kanon/index.html')
+
+def order(request):
+    return render(request, 'kanon/index.html')
