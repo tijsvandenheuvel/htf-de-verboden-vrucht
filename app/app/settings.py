@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_s3_storage',
 ]
 
 MIDDLEWARE = [
@@ -119,3 +120,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+AWS_S3_MAX_AGE_SECONDS_STATIC = "94608000"
+YOUR_S3_BUCKET = "zappa-de-verboden-vrucht-static"
+
+STATICFILES_STORAGE = "django_s3_storage.storage.StaticS3Storage"
+AWS_S3_BUCKET_NAME_STATIC = YOUR_S3_BUCKET
+
+# These next two lines will serve the static files directly 
+# from the s3 bucket
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % YOUR_S3_BUCKET
+STATIC_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
