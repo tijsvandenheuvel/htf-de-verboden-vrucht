@@ -9,6 +9,7 @@ class User(models.Model):
         return self.user_name
 
 class Munition(models.Model):
+    munition_type = models.CharField(max_length= 50)
     amount = models.IntegerField(default=0)
 
     def __str__(self):
