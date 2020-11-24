@@ -1,3 +1,4 @@
-app/app/kanon/migrations/
 app/app/__pycache__/
-app/app/kanon/__pycache__/
+
+app/kanon/migrations/
+app/kanon/__pycache__/
