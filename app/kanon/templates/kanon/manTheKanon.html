@@ -5,11 +5,9 @@
 <h2>MAN THE KANON!</h2>
 
 
-<form>
-    <label for="Kname">Konon name:</label><br>
-    <input type="text" id="Kname" name="Kname"><br>
+<form action="{% url 'kanon:assignSoldier' kanon.id name%}" method='post'>
     <label for="Uname">User name:</label><br>
-    <input type="text" id="Uname" name="Uname"><br>
+    <input type="text" id="name" name="name"><br>
     <input type="submit" value="Assign">
 </form>
 

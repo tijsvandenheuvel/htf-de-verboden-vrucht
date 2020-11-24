@@ -16,12 +16,23 @@ def detail(request, kanon_id):
 
 # add users to kanon
 def reservation(request, kanon_id):
-    return render(request, 'kanon/index.html')
+    return render(request, 'kanon/manTheKanon.html')
 
 # add munition to kanon
 def order(request, kanon_id):
-    return render(request, 'kanon/index.html')
+    return render(request, 'kanon/orderMunition.html')
 
+def placeOrder(request,kanon_id,amount):
+    kanon = get_object_or_404(Kanon, pk=kanon_id)
+    kanon.munition=kanon.munition+amount
+    return render(request, 'kanon/detail.html', {'kanon': kanon})
+
+def assignSoldier(request,kanon_id,name):
+    kanon = get_object_or_404(Kanon, pk=kanon_id)
+    
+    return render(request, 'kanon/detail.html', {'kanon': kanon})
+
+# momenteel via admin page
 def createMunition(request):
     return render(request, 'kanon/index.html')
 
